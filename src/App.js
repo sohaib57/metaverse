@@ -1,13 +1,12 @@
-import React from 'react';
 import {
-  ChakraProvider,
-  theme,
+  ChakraProvider
 } from '@chakra-ui/react';
+import CreateExperience from './screens/CreateExperience';
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      Hello world
+    <ChakraProvider >
+      <CreateExperience />
     </ChakraProvider>
   );
 }
