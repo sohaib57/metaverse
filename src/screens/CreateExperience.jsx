@@ -1,12 +1,14 @@
-import { React, ReactFragment } from 'react'
+import { React } from 'react'
 import { Stack } from '@chakra-ui/react'
 import Header from '../components/createexperience/Header'
+import AddExperience from '../components/createexperience/AddExperience'
 
 const CreateExperience = () => {
     return (
-        <ReactFragment>
-            <Header />
-        </ReactFragment>
+        <>
+            {/* <Header /> */}
+            <AddExperience />
+        </>
 
     )
 }
