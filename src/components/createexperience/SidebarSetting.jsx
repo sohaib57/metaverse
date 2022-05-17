@@ -101,8 +101,8 @@ const SidebarSetting = ({ hex, hsl, hsv }) => {
 
             <Accordion defaultIndex={[0]} allowMultiple p={'2'} >
                 {/* background style */}
-                <AccordionItem mb={'2'} border='1px solid rgb(230, 230, 230)' >
-                    <AccordionButton bg='rgba(0, 0, 0, 0.05)' px={2} >
+                <AccordionItem mb={'2'} border='1px solid rgb(230, 230, 230)'>
+                    <AccordionButton bg='rgba(0, 0, 0, 0.05)' px={2}  >
                         <AccordionIcon />
                         <Box pl={1} fontWeight={'bold'} color='rgba(0, 0, 0, 0.8)' fontSize='12px' flex='1' textAlign='left'>
                             Background style

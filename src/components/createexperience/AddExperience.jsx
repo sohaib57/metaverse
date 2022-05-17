@@ -6,14 +6,16 @@ const AddExperience = () => {
 
 
     return (
-        <Stack flexDirection={'row'} width={'full'} height={'100vh'} >
-            <Stack margin={'0px !important'} width={'80%'} height={'100%'} backgroundColor={'red'} >
+        <Stack flexDirection={'row'} h={'100vh'} margin={'0 !important'} width={'full'}  >
+            <Stack margin={'0px !important'} width={'80%'} height={'full'} overflow={'auto'}   >
                 <CanvaComponent />
             </Stack>
 
             <Stack margin={'0px !important'} height={'100%'} width={'20%'} bg='rgba(0, 0, 0, 0.03)'   >
                 <SidebarSetting />
             </Stack>
+
+
 
         </Stack>
 
