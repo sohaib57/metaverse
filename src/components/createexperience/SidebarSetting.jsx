@@ -26,11 +26,12 @@ import {
 
 
 } from '@chakra-ui/react'
-
+import { DatePicker, DatePickerInput } from '@carbon/react'
 import { CirclePicker, HuePicker, CustomPicker } from 'react-color'
-
 import AR from '../../assets/images/AR.png'
 import bg from '../../assets/images/bg.jpg'
+import ReactCalendar from '../createexperience/ui/ReactCalendar'
+import ReactTimer from '../createexperience/ui/ReactTimer'
 
 
 
@@ -41,6 +42,9 @@ const SidebarSetting = ({ hex, hsl, hsv }) => {
     const [showSquareSlider, setShowSquareSlider] = useState(false)
     const [showCircleSlider, setShowCircleSlider] = useState(false)
     const [color, setColor] = useState('#00bcd4')
+    const [checkedSwitch, setCheckedSwitch] = useState()
+    const [timerDelayValue, setDelayTimerValue] = useState()
+    const [timerTransitionValue, setTimerTransitionValue] = useState()
 
 
     const styles = {
@@ -51,6 +55,34 @@ const SidebarSetting = ({ hex, hsl, hsv }) => {
             position: "relative"
         }
     };
+
+
+    function swit(e) {
+
+        setCheckedSwitch(e.target.checked)
+
+    }
+    function timerTyperHandler(value) {
+        const timer = value.target.value
+        if (timer === "Delay") {
+
+            setDelayTimerValue(true)
+
+        }
+        else if (timer === "At timestamp") {
+
+            setTimerTransitionValue(true)
+            setDelayTimerValue(false)
+
+
+        }
+        else {
+
+            setDelayTimerValue(false)
+            setTimerTransitionValue(false)
+
+        }
+    }
 
     function hideSliderHandler() {
         setShowSquareSlider(false)
@@ -71,12 +103,6 @@ const SidebarSetting = ({ hex, hsl, hsv }) => {
 
 
     }
-
-
-
-
-
-
 
     function onHandleChange(event) {
         const value = event.target.value
@@ -250,7 +276,7 @@ const SidebarSetting = ({ hex, hsl, hsv }) => {
 
                             <CirclePicker width='220px' color={color} onChangeComplete={updatedColor => setColor(updatedColor.hex)} />
 
-                            <Input value={color} />
+                            <Input size={'sm'} value={color} />
                         </Stack>
                     </AccordionPanel>
                 </AccordionItem>
@@ -268,15 +294,77 @@ const SidebarSetting = ({ hex, hsl, hsv }) => {
 
                         <Stack direction={'row'} >
                             <Stack alignSelf={'center'}>
-                                <Switch size='md' />
+                                <Switch onChange={swit} size='md' />
                             </Stack>
                             <Stack spacing={'0'}>
-                                <Text>
+                                <Text color='rgba(0, 0, 0, 0.8)' fontSize='12px' >
                                     Use a timer to transition automatically
                                 </Text>
                             </Stack>
 
                         </Stack>
+
+                        {
+                            checkedSwitch ?
+                                <Stack>
+                                    <Text color='rgba(0, 0, 0, 0.8)' fontSize='12px' >Timer type</Text>
+                                    <Select size={'sm'} onChange={timerTyperHandler} >
+                                        <option value="Choose"> Choose  </option>
+                                        <option value="Delay" >Delay</option>
+                                        <option value="At timestamp" > At timestamp</option>
+                                    </Select>
+                                    {
+                                        timerDelayValue ?
+                                            <Stack>
+                                                <Text color='rgba(0, 0, 0, 0.8)' fontSize='12px' >
+                                                    Delay (seconds)
+                                                </Text>
+                                                <Input size={'sm'} defaultValue={'5'} ></Input>
+                                            </Stack> : timerTransitionValue ? <Stack>
+
+                                                <ReactCalendar />
+                                                <ReactTimer />
+
+                                            </Stack> : null
+
+                                    }
+
+                                    <Text color='rgba(0, 0, 0, 0.8)' fontSize='12px' >
+                                        Default transition
+                                    </Text>
+                                    <Select size={'sm'} onChange={onHandleChange}>
+                                        <option value='Do nothing'>Do nothing</option>
+                                        <option value='Transition to scene'>Transition to scene</option>
+                                        <option value='Transition to Block'>Transition to block</option>
+                                        <option value='End experience'>End experience</option>
+                                        <option value='Suspend experience'>Suspend experience</option>
+                                    </Select>
+                                    {inputScene ? <Select size={'sm'} >
+                                        <option value="" disabled selected hidden>Select a scene</option>
+                                        <option value='New Scene'>New Scene</option>
+                                    </Select>
+                                        : inputBlock ? <Select size={'sm'} >
+                                            <option value="" disabled selected hidden>Select a block</option>
+                                            <option value='New Block'>New Block</option>
+                                            <option value='Entry'>Entry</option>
+
+                                        </Select> : null}
+                                    <Stack direction={'row'} >
+                                        <Stack alignSelf={'center'}>
+                                            <Switch size='md' />
+                                        </Stack>
+                                        <Stack spacing={'0'}>
+                                            <Text color='rgba(0, 0, 0, 0.8)' fontSize='12px' >
+                                                Force user to wait until timer finishes before transitioning
+                                            </Text>
+                                        </Stack>
+
+                                    </Stack>
+
+                                </Stack> :
+                                null
+
+                        }
 
 
                     </AccordionPanel>
@@ -292,7 +380,7 @@ const SidebarSetting = ({ hex, hsl, hsv }) => {
 
                     </AccordionButton>
                     <AccordionPanel pb={4} bg={'white'} >
-                        <Select onChange={onHandleChange}>
+                        <Select size={'sm'} onChange={onHandleChange}>
                             <option value='Do nothing'>Do nothing</option>
                             <option value='Transition to scene'>Transition to scene</option>
                             <option value='Transition to Block'>Transition to block</option>
@@ -304,11 +392,11 @@ const SidebarSetting = ({ hex, hsl, hsv }) => {
                             finished being drawn on the screen.
                         </Text>
 
-                        {inputScene ? <Select >
+                        {inputScene ? <Select size={'sm'} >
                             <option value="" disabled selected hidden>Select a scene</option>
                             <option value='New Scene'>New Scene</option>
                         </Select>
-                            : inputBlock ? <Select >
+                            : inputBlock ? <Select size={'sm'} >
                                 <option value="" disabled selected hidden>Select a block</option>
                                 <option value='New Block'>New Block</option>
                                 <option value='Entry'>Entry</option>
