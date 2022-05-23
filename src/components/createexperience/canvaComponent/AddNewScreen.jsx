@@ -16,7 +16,7 @@ const AddNewScreen = () => {
 
   return (
     <>
-      <Button onClick={onOpen} leftIcon={<AiOutlinePlus/>} borderRadius={'full'} w={'fit-content'} color={'white'} fontWeight={'bold'} fontSize={'sm'} h={'7'} bgColor={'#5CA5FF'}>Add new</Button>
+      <Button onClick={onOpen} leftIcon={<AiOutlinePlus/>} borderRadius={'full'} w={'fit-content'} color={'white'} fontWeight={'bold'} fontSize={'sm'} h={'7'} bgColor={'#5CA5FF'} _hover={{}} _active={{}} _focus={{}}>Add new</Button>
 
       <Modal isOpen={isOpen} onClose={onClose} size={'full'}>
         <ModalOverlay />
