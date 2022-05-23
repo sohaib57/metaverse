@@ -2,11 +2,11 @@ import { FormLabel } from '@carbon/react'
 import { Button, Icon, IconButton, Input, Stack, Textarea } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { AiFillCaretDown, AiFillDelete } from 'react-icons/ai'
-import CharacterModal from '../canvaComponent/CharacterModal'
+import CharacterModal from './CharacterModal'
 import screenBack from '../../../assets/images/screenBack.jpg';
 import { IoIosArrowForward } from 'react-icons/io'
-import AddFrameModal from '../canvaComponent/AddFrameModal'
-import AddSoundModal from '../canvaComponent/AddSoundModal'
+import AddFrameModal from './AddFrameModal'
+import AddSoundModal from './AddSoundModal'
 import { Html } from 'react-konva-utils'
 import { Group, Layer, Rect, Stage } from 'react-konva'
 
@@ -110,6 +110,7 @@ const Reactkonva = () => {
                       borderRadius={2}
                       resize={'none'}
                       bg={'rgba(255, 255, 255, 0.1)'}
+                      border={'2px solid rgba(255, 255, 255, 0.2)'}
                       w={190}
 
                     />

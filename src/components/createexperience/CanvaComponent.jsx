@@ -14,7 +14,7 @@ import AddSoundModal from './canvaComponent/AddSoundModal';
 import AddFrameModal from './canvaComponent/AddFrameModal';
 import AddNewScreen from './canvaComponent/AddNewScreen';
 // import ReactKonva from ReactKonva.html
-import ReactKonva from '../../components/createexperience/canvaComponents/Reactkonva'
+import ReactKonva from './canvaComponent/Reactkonva'
 
 const CanvaComponent = () => {
 
@@ -48,9 +48,6 @@ const CanvaComponent = () => {
         <Stack position={'absolute'} right={'2'} top={'2'}>
           <AddNewScreen />
         </Stack>
-      </Stack>
-      <Stack position={'absolute'} right={'2'} top={'2'}>
-        <AddNewScreen />
       </Stack>
     </>
 
