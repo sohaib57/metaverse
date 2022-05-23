@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   FormLabel,
@@ -6,8 +6,7 @@ import {
   Img,
   Stack,
   Textarea,
-  IconButton,
-  Text,
+  IconButton
 } from '@chakra-ui/react';
 import dottedBG from '../../assets/images/download.png';
 import settings from '../../assets/images/settings.png';
@@ -50,7 +49,11 @@ const CanvaComponent = () => {
           <AddNewScreen />
         </Stack>
       </Stack>
+      <Stack position={'absolute'} right={'2'} top={'2'}>
+        <AddNewScreen />
+      </Stack>
     </>
+
   );
 };
 
