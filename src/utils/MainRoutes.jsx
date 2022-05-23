@@ -1,17 +1,16 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import CreateExperience from "../screens/CreateExperience";
+
 
 const MainRoutes = () => {
     return (
 
         <Routes>
-            <Route path='/createexperience' element={<CreateExperience />} >
-            </Route>
-
+            <Route path='createexperience' element={<CreateExperience />} />
+           
         </Routes>
 
 
     )
 }
-
 export default MainRoutes
