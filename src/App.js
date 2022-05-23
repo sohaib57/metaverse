@@ -6,7 +6,7 @@ import MainRoutes from './utils/MainRoutes.jsx'
 function App() {
   return (
     <ChakraProvider >
-     <MainRoutes/>
+      <MainRoutes />
     </ChakraProvider>
   );
 }

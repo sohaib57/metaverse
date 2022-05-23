@@ -6,8 +6,7 @@ const MainRoutes = () => {
     return (
 
         <Routes>
-            <Route path='createexperience' element={<CreateExperience />} />
-           
+            <Route path='createexperience' element={<CreateExperience />} /> 
         </Routes>
 
 
