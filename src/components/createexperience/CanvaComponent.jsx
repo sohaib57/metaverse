@@ -18,7 +18,6 @@ import ReactKonva from './canvaComponent/Reactkonva'
 
 const CanvaComponent = () => {
 
-
   return (
     <>
 
