@@ -83,9 +83,9 @@ const Reactkonva = () => {
               console.log("dragstart");
             }}
           >
-            <Html  divProps={{}} >
-              <Stack  h={400}>
-                <Stack  
+            <Html divProps={{}} >
+              <Stack h={400}>
+                <Stack
                   justify={'space-between'}
                   direction={'row'}
                   color={'rgb(110, 110, 110)'}>
@@ -95,20 +95,23 @@ const Reactkonva = () => {
                 <Stack
                   className="card"
                   bgImage={screenBack}
-                  w={'56'}
-                  h={'96'}
+                  w={200}
+                  h={400}
                   bgRepeat={'no-repeat'}
                   bgSize={'cover'}
                   borderRadius={'md'}
                   position={'relative'}>
-                  <Stack p={'2'} spacing={'-1.5'} align={'center'}>
+                  <Stack p={'2'} spacing={'-2.5'} align={'center'}>
                     <Textarea
                       size={'sm'}
                       _hover={{ bg: 'rgba(255, 255, 255, 0.1)' }}
                       _focus={{ bg: 'white' }}
                       overflow={'hidden'}
-                      borderRadius={'md'}
+                      borderRadius={2}
                       resize={'none'}
+                      bg={'rgba(255, 255, 255, 0.1)'}
+                      w={190}
+
                     />
                     <Icon as={AiFillCaretDown} sx={{ filter: 'invert(1)' }} />
                   </Stack>
@@ -116,7 +119,7 @@ const Reactkonva = () => {
                     <CharacterModal />
                   </Stack>
 
-                  <Stack position={'absolute'} bottom={'5%'} w={'inherit'}>
+                  <Stack className='Add Button' position={'absolute'} bottom={'5%'} w={400}>
                     <Button
                       onClick={onAddBtnClick}
                       variant={'ghost'}
@@ -133,7 +136,7 @@ const Reactkonva = () => {
                 </Stack>
               </Stack>
             </Html>
-            <Rect width={400} height={400} fill={'red'} />
+            <Rect width={220} height={420} />
           </Group>
         </Layer>
       </Stage>
