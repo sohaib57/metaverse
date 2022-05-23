@@ -14,10 +14,9 @@ import AddSoundModal from './canvaComponent/AddSoundModal';
 import AddFrameModal from './canvaComponent/AddFrameModal';
 import AddNewScreen from './canvaComponent/AddNewScreen';
 // import ReactKonva from ReactKonva.html
-import ReactKonva from '../../components/createexperience/canvaComponents/Reactkonva'
+import ReactKonva from '../../components/createexperience/canvaComponent/Reactkonva'
 
 const CanvaComponent = () => {
-
 
   return (
     <>
